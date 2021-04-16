@@ -12,7 +12,7 @@ RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh |
 COPY docker/install_test /usr/bin/install_test
 
 # COPY filebrowser/filebrowser /filebrowser
-COPY filebrowser/filebrowser /usr/local/bin/filebrowser
+COPY filebrowser_build/filebrowser_build /usr/local/bin/filebrowser
 
 # COPY docker/config.json /.filebrowser.json
 # RUN touch /database.db
