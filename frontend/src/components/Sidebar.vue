@@ -34,7 +34,7 @@
       </div>
 
       <div>
-        <router-link
+        <!-- <router-link
           class="action"
           to="/settings"
           :aria-label="$t('sidebar.settings')"
@@ -42,7 +42,7 @@
         >
           <i class="material-icons">settings_applications</i>
           <span>{{ $t("sidebar.settings") }}</span>
-        </router-link>
+        </router-link> -->
 
         <button
           v-if="authMethod == 'json'"

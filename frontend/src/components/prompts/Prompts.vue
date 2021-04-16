@@ -10,16 +10,16 @@ import Help from "./Help";
 import Info from "./Info";
 import Delete from "./Delete";
 import Rename from "./Rename";
-import Download from "./Download";
+// import Download from "./Download";
 import Move from "./Move";
 import Copy from "./Copy";
 import NewFile from "./NewFile";
 import NewDir from "./NewDir";
 import Replace from "./Replace";
 import ReplaceRename from "./ReplaceRename";
-import Share from "./Share";
-import Upload from "./Upload";
-import ShareDelete from "./ShareDelete";
+// import Share from "./Share";
+// import Upload from "./Upload";
+// import ShareDelete from "./ShareDelete";
 import { mapState } from "vuex";
 import buttons from "@/utils/buttons";
 
@@ -29,17 +29,17 @@ export default {
     Info,
     Delete,
     Rename,
-    Download,
+    // Download,
     Move,
     Copy,
-    Share,
+    // Share,
     NewFile,
     NewDir,
     Help,
     Replace,
     ReplaceRename,
-    Upload,
-    ShareDelete,
+    // Upload,
+    // ShareDelete,
   },
   data: function () {
     return {
@@ -94,12 +94,12 @@ export default {
           "copy",
           "newFile",
           "newDir",
-          "download",
+          // "download",
           "replace",
           "replace-rename",
-          "share",
-          "upload",
-          "share-delete",
+          // "share",
+          // "upload",
+          // "share-delete",
         ].indexOf(this.show) >= 0;
 
       return (matched && this.show) || null;
