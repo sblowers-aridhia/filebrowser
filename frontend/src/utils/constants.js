@@ -1,7 +1,9 @@
 const name = window.FileBrowser.Name || "File Browser";
 const disableExternal = window.FileBrowser.DisableExternal;
-const baseURL = window.FileBrowser.BaseURL;
-const staticURL = window.FileBrowser.StaticURL;
+// const baseURL = window.FileBrowser.BaseURL;
+const baseURL = window.location.origin + document.location.pathname.replace(/\/$/, "") + window.FileBrowser.BaseURL
+// const staticURL = window.FileBrowser.StaticURL;
+const staticURL = window.location.origin + document.location.pathname.replace(/\/$/, "") + window.FileBrowser.StaticURL;
 const recaptcha = window.FileBrowser.ReCaptcha;
 const recaptchaKey = window.FileBrowser.ReCaptchaKey;
 const signup = window.FileBrowser.Signup;

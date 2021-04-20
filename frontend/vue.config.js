@@ -1,5 +1,5 @@
 module.exports = {
   runtimeCompiler: true,
-  publicPath: "[{[ .StaticURL ]}]",
+  publicPath: "[{[ .RelURL ]}]",
   parallel: 2,
 };

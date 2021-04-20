@@ -12,12 +12,13 @@ import ProfileSettings from "@/views/settings/Profile";
 import Shares from "@/views/settings/Shares";
 import Errors from "@/views/Errors";
 import store from "@/store";
-import { baseURL } from "@/utils/constants";
+// import { baseURL } from "@/utils/constants";
 
 Vue.use(Router);
 
 const router = new Router({
-  base: baseURL,
+  // base: baseURL,
+  base: "",
   mode: "history",
   routes: [
     {
