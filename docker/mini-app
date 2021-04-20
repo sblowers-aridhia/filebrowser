@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd /
+
+/filebrowser -a 0.0.0.0 --noauth -p 8080 -r /home/workspace/files
