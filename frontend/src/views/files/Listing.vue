@@ -343,12 +343,15 @@ export default {
     },
     headerButtons() {
       return {
-        upload: this.user.perm.create,
-        download: this.user.perm.download,
+        // upload: this.user.perm.create,
+        upload: false,
+        // download: this.user.perm.download,
+        download: false,
         shell: this.user.perm.execute && enableExec,
         delete: this.selectedCount > 0 && this.user.perm.delete,
         rename: this.selectedCount === 1 && this.user.perm.rename,
-        share: this.selectedCount === 1 && this.user.perm.share,
+        // share: this.selectedCount === 1 && this.user.perm.share,
+        share: false,
         move: this.selectedCount > 0 && this.user.perm.rename,
         copy: this.selectedCount > 0 && this.user.perm.create,
       };

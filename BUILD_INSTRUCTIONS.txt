@@ -1,0 +1,30 @@
+
+## Build the frontend
+# 1) Delete everything in the /frontend/dist folder except the .gitignore file (ensures a clean build)
+
+# 2) Go to frontend folder
+cd frontend
+
+# 2) Run the build command
+npx vue-cli-service build --no-clean
+
+# 2) Go to parent folder
+cd ..
+
+
+## Build the filebrowser binary
+# 1) Delete the current 'filebrowser' binary file and 'filebrowser.db' file (if it exists) in the current directory (ensures a clean build)
+
+# 2) Start a WSL environment (I don't know if this can be run in a Windows enironment with a similar structure)
+wsl
+
+# 3) run the following command (assume GoLang is installed)
+env GOOS=linux GOARCH=amd64 go build
+
+# 4) exit the WSL environment
+exit
+
+
+## Build the container
+docker build --tag filebrowser-ws .
+

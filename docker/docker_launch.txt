@@ -1,1 +1,1 @@
-docker run -v C:\Users\stephenblowers\Javascript\filebrowser\testfolder:/home/workspace/files -p 8080:8080 filebrowser-ws
+docker run -v C:\Users\stephenblowers\Javascript\filebrowser\testfolder:/home/workspace/files -p 8080:8080 -n test filebrowser-ws
