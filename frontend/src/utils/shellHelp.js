@@ -3,10 +3,7 @@ export const shellIntro = `This is a shell terminal with limited functionality.
     Note that commands that require interaction will not work in this environment.
 `
 
-export const shellHelp = `echo - Command for echoing back text. 
-    This shell terminal does not recognise variables so this command is very limited.
-
-cat - Command for printing out files to console.
+export const shellHelp = `cat - Command for printing out files to console.
     Use the command 'cat --help' to see arguments and usage.
 
 cd - Command for changing directories - NOT POSSIBLE IN THIS ENVIRONMENT
@@ -16,6 +13,9 @@ clear - Clears the terminal screen.
 
 cp - Command for copying files to a new location.
     Use the command 'cp --help' to see arguments and usage.
+
+echo - Command for echoing back text. 
+    This shell terminal does not recognise variables so this command is very limited.
 
 exit - Closes the terminal.
 
