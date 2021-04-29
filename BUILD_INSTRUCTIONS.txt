@@ -24,6 +24,20 @@ env GOOS=linux GOARCH=amd64 go build
 # 4) exit the WSL environment
 exit
 
+## Enable commands in shell terminal
+# 1) Start a WSL environment (I don't know if this can be run in a Windows enironment with a similar structure)
+wsl
+
+# 2) Run the filebrowser with the --noauth flag to generate a filebrowser.db file with the correct initial configuration (othewise I don't know how to correctly set up --noauth)
+./filebrowser -a 0.0.0.0 --noauth -p 8080 -r .
+
+# 3) Kill the running filebrowser program (Ctrl+c). A filebrowser.db file should be in the root folder now.
+
+# 4) Run the update command to the profile to add in all of the commands available
+./filebrowser users update admin --commands "echo,cat,cd,cp,ls,mkdir,pwd,tar,touch,unzip,zip"
+
+# 5) exit the WSL environment
+exit
 
 ## Build the container
 docker build --tag filebrowser-ws .

@@ -5,6 +5,10 @@
     ref="scrollable"
     :class="{ ['shell--hidden']: !showShell }"
   >
+    <div key="index-help" class="shell__result">
+      <pre class="shell__text">{{ shellIntro }}</pre>
+    </div>
+
     <div v-for="(c, index) in content" :key="index" class="shell__result">
       <div class="shell__prompt">
         <i class="material-icons">chevron_right</i>
@@ -32,6 +36,7 @@
 <script>
 import { mapMutations, mapState, mapGetters } from "vuex";
 import { commands } from "@/api";
+import {shellIntro, shellHelp} from "@/utils/shellHelp"
 
 export default {
   name: "shell",
@@ -51,6 +56,7 @@ export default {
     history: [],
     historyPos: 0,
     canInput: true,
+    shellIntro: shellIntro,
   }),
   methods: {
     ...mapMutations(["toggleShell"]),
@@ -82,13 +88,14 @@ export default {
         return;
       }
 
-      if (cmd === "clear") {
+      if (cmd === "clear" || cmd.startsWith("clear ")) {
         this.content = [];
         event.target.innerHTML = "";
         return;
       }
 
-      if (cmd === "exit") {
+      if (cmd === "exit" || cmd.startsWith("exit ")) {
+        this.content = [];
         event.target.innerHTML = "";
         this.toggleShell();
         return;
@@ -105,20 +112,54 @@ export default {
       this.historyPos = this.history.length;
       this.content.push(results);
 
-      commands(
-        this.path,
-        cmd,
-        (event) => {
-          results.text += `${event.data}\n`;
-          this.scroll();
-        },
-        () => {
-          results.text = results.text.trimEnd();
-          this.canInput = true;
-          this.$refs.input.focus();
-          this.scroll();
-        }
-      );
+      if (cmd==="help" || cmd.startsWith("help ")) {
+        commands(
+          this.path,
+          cmd,
+          () => {
+            results.text += shellHelp;
+            this.scroll();
+          },
+          () => {
+            results.text = results.text.trimEnd();
+            this.canInput = true;
+            this.$refs.input.focus();
+            this.scroll();
+          }
+        );
+      } else if (cmd.startsWith("cd ")) {
+        commands(
+          this.path,
+          cmd,
+          () => {
+            results.text += `cd functionality is not possible within this shell terminal. Please navigate folders via the interface.`;
+            this.scroll();
+          },
+          () => {
+            results.text = results.text.trimEnd();
+            this.canInput = true;
+            this.$refs.input.focus();
+            this.scroll();
+          }
+        );
+
+      } else {
+
+        commands(
+          this.path,
+          cmd,
+          (event) => {
+            results.text += `${event.data}\n`;
+            this.scroll();
+          },
+          () => {
+            results.text = results.text.trimEnd();
+            this.canInput = true;
+            this.$refs.input.focus();
+            this.scroll();
+          }
+        );
+      }
     },
   },
 };
