@@ -67,7 +67,7 @@
     "ctrl": {
       "click": "markiere mehrere Dateien oder Ordner",
       "f": "öffnet eine neue Suche",
-      "s": "speichert eine Datei oder einen Ordner am akutellen Ort"
+      "s": "speichert eine Datei"
     },
     "del": "löscht die ausgewählten Elemente",
     "doubleClick": "öffnet eine Datei oder einen Ordner",

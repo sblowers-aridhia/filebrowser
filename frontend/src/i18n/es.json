@@ -67,7 +67,7 @@
     "ctrl": {
       "click": "seleccionar múltiples archivos o carpetas",
       "f": "abre la búsqueda",
-      "s": "guarda un archivo o lo descarga a la carpeta en la que estás"
+      "s": "guarda un archivo"
     },
     "del": "elimina los items seleccionados",
     "doubleClick": "abre un archivo o carpeta",

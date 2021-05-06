@@ -57,13 +57,13 @@
           :label="$t('buttons.switchView')"
           @action="switchView"
         />
-        <action
+        <!-- <action
           v-if="headerButtons.download"
           icon="file_download"
           :label="$t('buttons.download')"
           @action="download"
           :counter="selectedCount"
-        />
+        /> -->
         <action
           v-if="headerButtons.upload"
           icon="file_upload"
@@ -385,10 +385,10 @@ export default {
     window.addEventListener("resize", this.windowsResize);
 
     if (!this.user.perm.create) return;
-    document.addEventListener("dragover", this.preventDefault);
-    document.addEventListener("dragenter", this.dragEnter);
-    document.addEventListener("dragleave", this.dragLeave);
-    document.addEventListener("drop", this.drop);
+    // document.addEventListener("dragover", this.preventDefault);
+    // document.addEventListener("dragenter", this.dragEnter);
+    // document.addEventListener("dragleave", this.dragLeave);
+    // document.addEventListener("drop", this.drop);
   },
   beforeDestroy() {
     // Remove event listeners before destroying this page.
@@ -469,7 +469,7 @@ export default {
           break;
         case "s":
           event.preventDefault();
-          document.getElementById("download-button").click();
+          // document.getElementById("download-button").click();
           break;
       }
     },

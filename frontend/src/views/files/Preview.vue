@@ -30,13 +30,13 @@
           @action="deleteFile"
           id="delete-button"
         />
-        <action
+        <!-- <action
           :disabled="loading"
           v-if="user.perm.download"
           icon="file_download"
           :label="$t('buttons.download')"
           @action="download"
-        />
+        /> -->
         <action
           :disabled="loading"
           icon="info"
@@ -81,21 +81,27 @@
             :label="'Subtitle ' + index"
             :default="index === 0"
           />
-          Sorry, your browser doesn't support embedded videos, but don't worry,
+          <!-- Sorry, your browser doesn't support embedded videos, but don't worry,
           you can <a :href="downloadUrl">download it</a>
-          and watch it with your favorite video player!
+          and watch it with your favorite video player! -->
+          Sorry, your browser doesn't support embedded videos.
         </video>
         <object
           v-else-if="req.extension.toLowerCase() == '.pdf'"
           class="pdf"
           :data="raw"
         ></object>
-        <a v-else-if="req.type == 'blob'" :href="downloadUrl">
+        <!-- <a v-else-if="req.type == 'blob'" :href="downloadUrl">
           <h2 class="message">
             {{ $t("buttons.download") }}
             <i class="material-icons">file_download</i>
           </h2>
-        </a>
+        </a> -->
+        <div v-else-if="req.type == 'blob'" :class="blobPreview">
+          <h2 class="message">
+            No preview available for this file.
+          </h2>
+        </div>
       </div>
     </template>
 

@@ -68,7 +68,7 @@
     "ctrl": {
       "click": "select multiple files or directories",
       "f": "opens search",
-      "s": "save a file or download the directory where you are"
+      "s": "save a file"
     },
     "del": "delete selected items",
     "doubleClick": "open a file or directory",

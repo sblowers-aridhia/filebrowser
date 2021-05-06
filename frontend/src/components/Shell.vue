@@ -127,7 +127,7 @@ export default {
             this.scroll();
           }
         );
-      } else if (cmd.startsWith("cd ")) {
+      } else if (cmd==="cd" || cmd.startsWith("cd ")) {
         commands(
           this.path,
           cmd,
